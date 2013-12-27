@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.folderFind = new System.Windows.Forms.FolderBrowserDialog();
             this.bGetFolder = new System.Windows.Forms.Button();
             this.txtFolder = new System.Windows.Forms.TextBox();
@@ -157,6 +158,7 @@
             this.Controls.Add(this.thisPic);
             this.Controls.Add(this.txtFolder);
             this.Controls.Add(this.bGetFolder);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Quick Image Comparer - by Kevin Cole";

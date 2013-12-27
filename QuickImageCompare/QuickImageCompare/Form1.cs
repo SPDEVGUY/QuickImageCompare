@@ -336,18 +336,24 @@ namespace QuickImageCompare
             if (e.KeyCode == Keys.Home) folder.Save();
             if (e.KeyCode == Keys.Enter)
             {
-                _previousImage.Dispose();
-                _nextImage.Dispose();
-                _nextNextImage.Dispose();
-                _thisImage.Dispose();
+                if (
+                    MessageBox.Show("Are you sure you want to process images into their folders now?", "Process images?", MessageBoxButtons.OKCancel) ==
+                    DialogResult.OK)
+                {
 
-                _previousImage = new Bitmap(1,1);
-                _nextImage = new Bitmap(1, 1);
-                _nextNextImage = new Bitmap(1, 1);
-                _thisImage = new Bitmap(1, 1);
+                    _previousImage.Dispose();
+                    _nextImage.Dispose();
+                    _nextNextImage.Dispose();
+                    _thisImage.Dispose();
 
-                folder.Process();
-                LoadFolder();
+                    _previousImage = new Bitmap(1, 1);
+                    _nextImage = new Bitmap(1, 1);
+                    _nextNextImage = new Bitmap(1, 1);
+                    _thisImage = new Bitmap(1, 1);
+
+                    folder.Process();
+                    LoadFolder();
+                }
             }
 
             e.SuppressKeyPress = true;
